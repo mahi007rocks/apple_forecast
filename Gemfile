@@ -6,6 +6,11 @@ ruby "3.2.3"
 
 gem "rails", "~> 7.1"
 gem "bootsnap", require: false
+gem "puma"
+gem "importmap-rails"
+gem "sprockets-rails"
+gem "stimulus-rails"
+gem "turbo-rails"
 
 group :development, :test do
   gem "sqlite3", "~> 1.6"
