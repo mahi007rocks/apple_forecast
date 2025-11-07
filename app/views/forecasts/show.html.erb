@@ -1,0 +1,37 @@
+<h1>
+  <%= t("forecasts.show.title", address: @view_model.address) %>
+  <% if @view_model.cached? %>
+    <span class="meta"><%= t("forecasts.show.cached_label") %></span>
+  <% end %>
+</h1>
+
+<div class="forecast-card">
+  <p><strong><%= t("forecasts.show.current_temperature") %>:</strong> <%= @view_model.current_temperature %></p>
+  <div class="forecast-grid">
+    <div>
+      <strong><%= t("forecasts.show.high_temperature") %></strong>
+      <div><%= @view_model.high_temperature %></div>
+    </div>
+    <div>
+      <strong><%= t("forecasts.show.low_temperature") %></strong>
+      <div><%= @view_model.low_temperature %></div>
+    </div>
+  </div>
+  <p class="meta"><%= t("forecasts.show.fetched_at") %>: <%= @view_model.fetched_at %></p>
+</div>
+
+<% if @view_model.daily_forecast.any? %>
+  <h2><%= t("forecasts.show.daily_header") %></h2>
+  <div class="forecast-grid">
+    <% @view_model.daily_forecast.each_with_index do |day, index| %>
+      <div>
+        <strong><%= t("forecasts.show.day", index: index + 1) %></strong>
+        <div><%= day[:date] %></div>
+        <div><%= t("forecasts.show.high_temperature") %>: <%= day[:high] %></div>
+        <div><%= t("forecasts.show.low_temperature") %>: <%= day[:low] %></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to t("forecasts.new.submit"), root_path %>
