@@ -4,16 +4,7 @@ RSpec.describe Geocoding::AddressLookup do
   subject(:lookup_service) { described_class.new(geocoder: geocoder) }
 
   let(:geocoder) { class_double("Geocoder") }
-  let(:location) do
-    instance_double(
-      "Geocoder::Result",
-      latitude: 37.3349,
-      longitude: -122.0090,
-      postal_code: "95014",
-      address: "1 Apple Park Way, Cupertino, CA 95014",
-      data: { "timezone" => "America/Los_Angeles" }
-    )
-  end
+  let(:location) { stub_geocoder_result }
 
   describe "#lookup" do
     it "returns structured location data" do

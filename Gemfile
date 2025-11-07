@@ -17,6 +17,7 @@ group :development, :test do
   gem "rspec-rails", "~> 6.0"
   gem "webmock", "~> 3.19"
   gem "dotenv-rails"
+  gem "database_cleaner-active_record", "~> 2.1"
 end
 
 group :production do

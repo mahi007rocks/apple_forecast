@@ -20,7 +20,7 @@ class ForecastsController < ApplicationController
   end
 
   def show
-    redirect_to root_path
+    render :show
   end
 
   private

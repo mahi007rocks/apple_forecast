@@ -46,7 +46,9 @@ class ForecastViewModel
   def format_temperature(value)
     return "–" if value.nil?
 
-    format("%.1f°F", value)
+    # Round to 1 decimal place before formatting
+    rounded = (value * 10).round / 10.0
+    format("%.1f°F", rounded)
   end
 
   def format_date(value)
