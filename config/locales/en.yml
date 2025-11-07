@@ -1,0 +1,20 @@
+en:
+  hello: "Hello world"
+  forecasts:
+    new:
+      title: "Apple Weather Forecast"
+      prompt: "Enter an address to fetch its weather forecast"
+      submit: "Get forecast"
+    show:
+      title: "Forecast for %{address}"
+      cached_label: "(cached)"
+      current_temperature: "Current temperature"
+      high_temperature: "High"
+      low_temperature: "Low"
+      fetched_at: "Updated at"
+      daily_header: "Daily Forecast"
+      day: "Day %{index}"
+    form:
+      address_placeholder: "1 Apple Park Way, Cupertino, CA"
+      cache_notice: "This forecast was served from cache."
+      error: "We could not retrieve the forecast for that address."
